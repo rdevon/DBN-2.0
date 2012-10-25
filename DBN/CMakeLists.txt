@@ -62,7 +62,6 @@ set(SOURCE_FILES
    Connections.cpp
    main.cpp
    MLP.cpp
-   Pathway.cpp
    RBM.cpp
    ReLULayer.cpp
    SigmoidLayer.cpp
@@ -84,7 +83,6 @@ set(HEADER_FILES
    Connections.h
    MLP.h
    opengl.h
-   Pathway.h
    RBM.h
    SupportFunctions.h
    SupportMath.h
