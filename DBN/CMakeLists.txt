@@ -13,6 +13,7 @@ include(FindGLFW)
 include(FindGLM)
 include(FindGLEW)
 include(FindGSL)
+include(FindHDF5)
 
 # Make sure that OpenGL is found
 if(NOT OPENGL_FOUND)
@@ -28,6 +29,11 @@ if(NOT GSL_FOUND)
   message(ERROR "Could not find GSL")
 endif(NOT GSL_FOUND)
 
+if(NOT HDF5_FOUND)
+  message(ERROR "Could not find HDF5")
+endif(NOT HDF5_FOUND)
+
+
 # Use OpenGL 3 core context
 add_definitions("-DGLFW_INCLUDE_GL3 -DGLFW_NO_GLU -DOPENGL3")
 
@@ -38,7 +44,8 @@ include_directories(
   ${GLM_INCLUDE_DIR}
   ${GLEW_INCLUDE_DIR}
   ${GSL_INCLUDE_DIRS}
-  ${GSLCBLAS_INCLUDE_DIRS}
+  ${CBLAS_INCLUDE_DIRS}
+  ${HDF5_INCLUDE_DIRS}
 )
 
 # Get the path to the source code and create a define. This is used
@@ -72,6 +79,9 @@ set(SOURCE_FILES
    Timecourses.cpp
    Types.cpp
    Viz.cpp
+   Viz_Units.cpp
+   Monitors.cpp
+   Monitor_Units.cpp
 )
 
 set(HEADER_FILES
@@ -90,6 +100,9 @@ set(HEADER_FILES
    Timecourses.h
    Types.h
    Viz.h
+   Viz_Units.h
+   Monitors.h
+   Monitor_Units.h
 )
 
 # Add a target executable
@@ -104,5 +117,6 @@ target_link_libraries(${PROJ_NAME}
   ${GLFW_LIBRARIES}
   ${PLATFORM_LIBRARIES}
   ${GSL_LIBRARIES}
-  ${GSLCBLAS_LIBRARIES}
+  ${CBLAS_LIBRARIES}
+  ${HDF5_LIBRARIES}
 )
