@@ -8,7 +8,7 @@
 
 #include "Types.h"
 
-std::string path = "/Users/devon/Research/DBN/";
+std::string path = "/home/pliz/soft/src/dev/tools/DBN-2.0/";
 
 gsl_rng * r;
 std::string MNISTpath = path + "MNISTdata/";
