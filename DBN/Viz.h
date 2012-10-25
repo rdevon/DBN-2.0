@@ -5,14 +5,15 @@
 //  Created by Devon Hjelm on 7/23/12.
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
+
 #ifndef DBN_Viz_h
 #define DBN_Viz_h
 #include "Types.h"
 
-#define GLFW_GL3
-#include <GL/glfw.h>
 #define OPENGL3
 #include "opengl.h"
+#define GLFW_GL3
+#include <GL/glfw.h>
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
